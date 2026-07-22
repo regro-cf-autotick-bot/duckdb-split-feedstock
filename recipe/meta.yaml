@@ -1,5 +1,5 @@
 {% set name = "duckdb" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,14 +8,14 @@ package:
 source:
     # (!!) Please also update the git used for OVERRIDE_GIT_DESCRIBE in the build scripts.
   - url: https://github.com/duckdb/duckdb/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 99c36e4bf415f295e19ed67401adb72e075e63e6a0dc3a14312c986e29781fd0
+    sha256: f33155ff962e6e1e08fd1e9caffa487d4325aa60999e2eabc76feff534d6558b
     patches:
       - patches/0001-Dynamically-link-the-cli.patch
       - patches/0002-Make-extensions-prefix-free.patch
       - patches/0006-Install-.h-headers.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
